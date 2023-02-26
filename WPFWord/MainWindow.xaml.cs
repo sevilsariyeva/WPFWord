@@ -110,6 +110,6 @@ namespace WPFWord
         {
             openfileBtn_Click(sender, e);
         }
-       
+
     }
 }
