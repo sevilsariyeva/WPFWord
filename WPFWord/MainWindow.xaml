@@ -6,26 +6,15 @@
         xmlns:local="clr-namespace:WPFWord"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="870" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open"                        
+                        CanExecute="CanExecute_Open"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Open"
+                    Gesture="Ctrl+O"/>
+    </Window.InputBindings>
     <Grid>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="6*"/>
-        </Grid.RowDefinitions>
-        <WrapPanel Width="800" Height="60" Grid.Row="0" Orientation="Horizontal">
-            -->
-        <!--<Label Margin="10,15">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="20" ScaleY="3"></ScaleTransform>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>-->
-        <!--
-            <Label Grid.Row="0" Margin="10,15" Width="200" Height="30" Content="label"></Label>
-            <Button Grid.Row="0" Content="^" Width="30" Height="30">
-                
-            </Button>
-        </WrapPanel>-->
         <DockPanel>
             <DockPanel.Background>
                 <LinearGradientBrush>
@@ -45,7 +34,7 @@
                         BorderThickness="0"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
 
                     <Image Source="Images/triangle.png" Width="15" Height="15"></Image>
@@ -56,7 +45,7 @@
                         Foreground="Black" Height="44" Margin="3" HorizontalContentAlignment="Center" Click="saveBtn_Click"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
                 </Button>
                 <Label Name="checkLbl" IsEnabled="False" Padding="20,5" FontSize="18" Background="White"
@@ -74,7 +63,7 @@
                         Foreground="Black" Height="44" Margin="3" HorizontalContentAlignment="Center" Click="cutBtn_Click"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
                 </Button>
                 <Button IsEnabled="False" Name="copyBtn" Padding="15,5" FontSize="18" Background="White"
@@ -82,7 +71,7 @@
                         Foreground="Black" Height="44" Margin="3" HorizontalContentAlignment="Center" Click="copyBtn_Click"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
                 </Button>
                 <Button IsEnabled="False" Name="pasteBtn" Padding="15,5" FontSize="18" Background="White"
@@ -90,7 +79,7 @@
                         Foreground="Black" Height="44" Margin="3" HorizontalContentAlignment="Center" Click="pasteBtn_Click"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
                 </Button>
                 <Button IsEnabled="False" Name="selectallBtn" Padding="15,5" FontSize="18" Background="White"
@@ -98,14 +87,17 @@
                         Foreground="Black" Height="44" Margin="3" HorizontalContentAlignment="Center" Click="selectallBtn_Click"
                         >
                     <Button.BitmapEffect>
-                        <DropShadowBitmapEffect Color="LightGray" Direction="350"></DropShadowBitmapEffect>
+                        <DropShadowBitmapEffect Color="LightGray" Direction="350" Opacity="0.8"></DropShadowBitmapEffect>
                     </Button.BitmapEffect>
                 </Button>
             </WrapPanel>
-            <TextBox IsEnabled="False" TextChanged="textBox_TextChanged" TextWrapping="Wrap" Name="textBox" DockPanel.Dock="Left" Padding="20" FontSize="16" Background="White"
+
+            <TextBox  IsEnabled="False" TextChanged="textBox_TextChanged" TextWrapping="Wrap" Name="textBox" DockPanel.Dock="Left" Padding="20" FontSize="16" Background="White"
                         FontStyle="Italic" FontWeight="ExtraBlack"
                         Foreground="Black" Margin="3"
-                        ></TextBox>
+                        >
+
+            </TextBox>
         </DockPanel>
     </Grid>
 </Window>

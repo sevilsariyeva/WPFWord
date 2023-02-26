@@ -26,6 +26,7 @@ namespace WPFWord
         public MainWindow()
         {
             InitializeComponent();
+
         }
         string path = "";
         private void openfileBtn_Click(object sender, RoutedEventArgs e)
@@ -35,27 +36,30 @@ namespace WPFWord
             openDialog.FilterIndex = 2;
 
 
-            if (openDialog.ShowDialog()== true)
+            if (openDialog.ShowDialog() == true)
             {
                 using (var sr = File.OpenText(openDialog.FileName))
                 {
-                    textBox.Text = sr.ReadToEnd();                   
+                    textBox.Text = sr.ReadToEnd();
                     path = Path.GetFullPath(openDialog.FileName);
                     linkLbl.Content = path;
                 }
             }
-            textBox.IsEnabled = true;
-            saveBtn.IsEnabled = true;
-            checkLbl.IsEnabled = true;
-            cutBtn.IsEnabled = true;
-            copyBtn.IsEnabled = true;
-            pasteBtn.IsEnabled = true;
-            selectallBtn.IsEnabled = true;
+            if (linkLbl.Content != null)
+            {
+                textBox.IsEnabled = true;
+                saveBtn.IsEnabled = true;
+                checkLbl.IsEnabled = true;
+                cutBtn.IsEnabled = true;
+                copyBtn.IsEnabled = true;
+                pasteBtn.IsEnabled = true;
+                selectallBtn.IsEnabled = true;
+            }
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
-            File.WriteAllText(path,textBox.Text);
+            File.WriteAllText(path, textBox.Text);
             MessageBox.Show("You have saved the text");
         }
         private void selectallBtn_Click(object sender, RoutedEventArgs e)
@@ -100,6 +104,11 @@ namespace WPFWord
             {
                 File.WriteAllText(path, textBox.Text);
             }
+        }
+
+        public void CanExecute_Open(object sender, CanExecuteRoutedEventArgs e)
+        {
+            openfileBtn_Click(sender, e);
         }
 
     }

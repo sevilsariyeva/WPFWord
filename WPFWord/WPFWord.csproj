@@ -98,5 +98,8 @@
   <ItemGroup>
     <Resource Include="Images\triangle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\star.jfif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
