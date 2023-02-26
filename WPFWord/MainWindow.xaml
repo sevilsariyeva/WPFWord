@@ -142,7 +142,7 @@
                     </Button.BitmapEffect>
                 </Button>
             </WrapPanel>
-
+            <ScrollViewer>
             <TextBox  IsEnabled="False" TextChanged="textBox_TextChanged" TextWrapping="Wrap" Name="textBox" DockPanel.Dock="Left" Padding="20" FontSize="16" Background="White"
                         FontStyle="Italic" FontWeight="ExtraBlack"
                         Foreground="Black" Margin="3"
@@ -151,6 +151,7 @@
                     <DropShadowBitmapEffect  Color="LightGray" Direction="20" Opacity="0.8"></DropShadowBitmapEffect>
                 </TextBox.BitmapEffect>
             </TextBox>
+            </ScrollViewer>
         </DockPanel>
     </Grid>
 </Window>
